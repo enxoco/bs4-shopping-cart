@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap 4 - Shopping Cart</title>
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+	<script src="./assets/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+
+
+      <script>
+		  $(document).on('submit','form.cart-form',function(){
+			   alert("Form Submitted!");
+			});
+	  
+	  
+          $(document).ready(function(){
+              $(".show-toast").click(function(){
+				  const x = document.getElementById("product-toast");
+				  var item_name = $(this).data('name');
+				  $("#item-name").text(item_name);
+                  x.className = "show";
+                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+              });
+          });
+      </script>
+	  
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Nav -->
+<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+    <div class="row">
+        <div class="col">
+			<span data-toggle="modal" data-target="#cart">
+				<i class="fa" style="font-size:24px">&#xf07a;</i>
+				<span class='badge badge-warning' id='lblCartCount'> 
+					<span class="total-count"></span> 
+				</span>
+			</span>
+
+		  <button class="clear-cart btn btn-danger ml-2" id="clearCart">
+			<i class="fas fa-undo"></i> Clear
+		  </button>
+		
+		</div>
+    </div>
+</nav>
+
+
+<!-- Main -->
+<div class="container">
+<br>  
+<h3 class="text-center">Bootstrap 4 - Shopping Cart</h3>
+<hr>
+
+
+<div class="row">
+	<div class="col-md-4">
+		<figure class="card card-product zoom">
+			<div class="img-wrap"><img src="images/item-0.jpg" class="rounded p-1"></div>
+			<figcaption class="info-wrap">
+					<h4 class="title">Beautiful dress</h4>
+					<p class="desc">Some small description goes here</p>
+					<div class="rating-wrap">
+						<div class="label-rating">132 reviews</div>
+						<div class="label-rating">154 orders </div>
+						<br/>
+						<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+					</div> <!-- rating-wrap.// -->
+			</figcaption>
+			<div class="bottom-wrap">
+				<a href="" class="btn btn-sm btn-primary float-right add-to-cart show-toast" data-product_id="1" data-pimage="./images/item-0.jpg" data-name="Beautiful dress" data-price="220">
+					<i class="fas fa-shopping-cart"></i> Add to cart
+				</a>	
+				<div class="price-wrap h5">
+					<span class="price-new">$220</span> <del class="price-old">$300</del>
+				</div> <!-- price-wrap.// -->
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col // -->
+	<div class="col-md-4">
+		<figure class="card card-product zoom">
+			<div class="img-wrap"><img src="images/item-1.jpg" class="rounded p-1"> </div>
+			<figcaption class="info-wrap">
+					<h4 class="title">Elegant style</h4>
+					<p class="desc">Some small description goes here</p>
+					<div class="rating-wrap">
+						<div class="label-rating">132 reviews</div>
+						<div class="label-rating">154 orders </div>
+						<br/>
+						<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+					</div> <!-- rating-wrap.// -->
+			</figcaption>
+			<div class="bottom-wrap">
+					<a href="" class="btn btn-sm btn-primary float-right add-to-cart show-toast" data-product_id="2" data-pimage="./images/item-1.jpg" data-name="Elegant style" data-price="115">
+						<i class="fas fa-shopping-cart"></i> Add to cart
+					</a>		
+					<div class="price-wrap h5">
+						<span class="price-new">$115</span> <del class="price-old">$180</del>
+					</div> <!-- price-wrap.// -->
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col // -->
+	<div class="col-md-4">
+		<figure class="card card-product zoom">
+			<div class="img-wrap"><img src="images/item-2.jpg" class="rounded p-1"></div>
+			<figcaption class="info-wrap">
+					<h4 class="title">Modern fashion</h4>
+					<p class="desc">Some small description goes here</p>
+					<div class="rating-wrap">
+						<div class="label-rating">132 reviews</div>
+						<div class="label-rating">154 orders </div>
+						<br/>
+						<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+					</div> <!-- rating-wrap.// -->
+			</figcaption>
+			<div class="bottom-wrap">
+					<a href="" class="btn btn-sm btn-primary float-right add-to-cart show-toast" data-product_id="3"  data-pimage="./images/item-2.jpg" data-name="Modern fashion" data-price="680">
+						<i class="fas fa-shopping-cart"></i> Add to cart
+					</a>	
+					<div class="price-wrap h5">
+						<span class="price-new">$680</span> <del class="price-old">$980</del>
+					</div> <!-- price-wrap.// -->
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col // -->
+</div> <!-- row.// -->
+
+<div class="row p-2 sr-only">
+	<p class="text-info font-weight-bold">
+		Easy to add to a new or existing project. Requires Bootstrap 4 Css & Js, Jquery, and Fontawesome. Just add the resources <code class="text-danger">*/style.css</code> and <code class="text-danger">*/script.js</code> to get going.
+	</p>
+	<p class="text-info font-weight-bold">
+		Customize the layout to your own preference. All you need is to provide the <kbd>Add to Cart</kbd> buttton with the <code class="text-danger">data-product_id</code>, <code class="text-danger">data-pimage</code> 
+		<code class="text-danger">data-name</code>, and <code class="text-danger">data-price</code> attributes.
+	</p>
+	<p class="text-info font-weight-bold">
+		The cart form data is generated with the function <code class="text-danger">displayCart()</code> in the <code class="text-danger">script.js</code> code. You can modify it to your own preference.
+	</p>
+</div>
+
+
+
+</div> 
+<!--container.//-->
+ <!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+		<form action="index.html" method="get" class="cart-form">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-shopping-cart text-black"></i> Shopping Cart</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			<table class="show-cart table">
+			  
+			</table>
+			<div class="font-weight-bold">Total price: $<span class="total-cart text-danger"></span></div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			<button type="submit" class="btn btn-success">Checkout</button>
+		  </div>
+		</form>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='./assets/js/jquery.min.js'></script>
+  <script  src="./assets/js/script.js"></script>
+  
+<!-- Shopping Cart Add Toast -->
+<div id="product-toast">
+    <div id="img">
+        <i class="fas fa-shopping-cart"></i>
+        Cart
+    </div>
+    <div id="desc"><span id="item-name"></span> added to cart</div>
+</div>
+
+</body>
+</html>
